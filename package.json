@@ -1,0 +1,53 @@
+{
+  "name": "claude-companion",
+  "displayName": "Claude Companion (Scheduler)",
+  "description": "أيقونة داخل نافذة كلود كود لجدولة المهام بوقت/تاريخ أو عند تجديد الحصة",
+  "version": "0.2.0",
+  "publisher": "local",
+  "private": true,
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeCompanion.openScheduler",
+        "title": "جدولة مهمة كلود",
+        "category": "Claude Companion",
+        "icon": "$(clock)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "claudeCompanion.openScheduler",
+          "when": "activeWebviewPanelId == 'claudeVSCodePanel'",
+          "group": "navigation@99"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "claudeCompanion.openScheduler"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Claude Companion",
+      "properties": {
+        "claudeCompanion.schedulerDir": {
+          "type": "string",
+          "default": "f:\\AI\\auto-code\\claude-scheduler",
+          "description": "مجلد سكربتات المجدول (run-watcher.ps1 و config.json)."
+        }
+      }
+    }
+  },
+  "scripts": {}
+}

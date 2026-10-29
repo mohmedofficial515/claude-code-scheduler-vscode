@@ -1,0 +1,82 @@
+:root { --radius: 10px; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+  font-size: var(--vscode-font-size, 13px);
+  color: var(--vscode-foreground);
+  background: var(--vscode-editor-background);
+}
+
+.wrap { padding: 12px; max-width: 640px; margin: 0 auto; }
+.hidden { display: none !important; }
+.muted { font-size: 0.8em; opacity: 0.7; margin-top: 4px; }
+
+.card {
+  border: 1px solid var(--vscode-panel-border, rgba(128,128,128,0.3));
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.card h3 { margin: 0 0 10px; font-size: 1em; display: flex; align-items: center; gap: 8px; }
+
+.kv { display: flex; justify-content: space-between; gap: 8px; padding: 3px 0; font-size: 0.9em; }
+.kv .v { opacity: 0.9; direction: ltr; }
+
+.badge { padding: 1px 10px; border-radius: 10px; font-size: 0.8em; }
+.badge.on { background: rgba(40,180,80,0.28); }
+.badge.off { background: rgba(200,60,60,0.28); }
+
+#countdown { font-size: 1.8em; font-weight: 700; direction: ltr; }
+
+.radio { display: block; padding: 6px 0; cursor: pointer; }
+.radio input { margin-inline-end: 8px; }
+
+.field { margin: 10px 0; }
+.field label { display: block; margin-bottom: 4px; font-size: 0.9em; opacity: 0.85; }
+input[type="datetime-local"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--vscode-input-border, rgba(128,128,128,0.4));
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  font: inherit;
+}
+textarea { direction: rtl; text-align: right; resize: vertical; }
+input[type="datetime-local"] { direction: ltr; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+button.btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  cursor: pointer;
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  font: inherit;
+}
+button.btn:hover { background: var(--vscode-button-hoverBackground); }
+button.btn.secondary {
+  background: var(--vscode-button-secondaryBackground, rgba(128,128,128,0.2));
+  color: var(--vscode-button-secondaryForeground, var(--vscode-foreground));
+}
+
+#log {
+  height: 200px;
+  overflow-y: auto;
+  background: var(--vscode-textCodeBlock-background, rgba(0,0,0,0.25));
+  border-radius: 6px;
+  padding: 6px;
+  font-family: var(--vscode-editor-font-family, monospace);
+  font-size: 0.8em;
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+}
